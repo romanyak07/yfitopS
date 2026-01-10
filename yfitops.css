@@ -1,0 +1,582 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f0f0f;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    padding: 1.5rem 0;
+    border-bottom: 2px solid #00d966;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #00d966, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateX(-0.1rem);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #00d966;
+    border-bottom-color: #00d966;
+}
+
+.hero {
+    padding: 6rem 2rem;
+    text-align: center;
+    border-bottom: 3px solid #00d966;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+}
+
+.hero-image {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    animation: slide 12s infinite;
+}
+
+.hero-image:nth-child(1) {
+    background-image: url('./imagens/DAMA.png');
+}
+
+.hero-image:nth-child(2) {
+    background-image: url('./imagens/ArticMonkeys.png');
+    animation-delay: 4s;
+}
+
+.hero-image:nth-child(3) {
+    background-image: url('./imagens/XutosePontapes.png');
+    animation-delay: 8s;
+}
+
+@keyframes slide {
+    0%, 100% {
+        opacity: 0.15;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: #bbb;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    background: linear-gradient(135deg, #00d966, #00ff88);
+    color: #000;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 217, 102, 0.4);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 5rem 2rem;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #999;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.bands-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.band-card {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #222;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
+}
+
+#bandas .band-card {
+    flex-direction: row;
+    align-items: stretch;
+}
+
+#bandas .band-image {
+    width: 40%;
+    height: auto;
+    min-height: 220px;
+}
+
+#bandas .band-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.band-card:hover {
+    transform: translateY(-8px);
+    border-color: #00d966;
+    box-shadow: 0 15px 40px rgba(0, 217, 102, 0.2);
+}
+
+.band-image {
+    width: 100%;
+    height: 180px; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.band-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.band-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.band-genre {
+    color: #00d966;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.band-content p {
+    color: #aaa;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: #00d966;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #00ff88;
+    transform: scale(1.1);
+}
+
+/* MÚSICAS */
+#musicas {
+    background: #0a0a0a;
+}
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.music-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid #222;
+    transition: all 0.3s ease;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.music-card:hover {
+    transform: translateY(-5px);
+    border-color: #00d966;
+    box-shadow: 0 10px 30px rgba(0, 217, 102, 0.2);
+}
+
+.music-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #00d966, #00ff88);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #000;
+    flex-shrink: 0;
+}
+
+.music-info {
+    flex: 1;
+}
+
+.music-info h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.music-artist {
+    color: #00d966;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.music-description {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.music-stats {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.music-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.music-stats i {
+    color: #00d966;
+}
+
+/* EVENTOS */
+#eventos {
+    background: linear-gradient(135deg, #0d2e1a 0%, #0a0a0a 100%);
+}
+
+.events-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event-item {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #00d966;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.event-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(0, 217, 102, 0.2);
+}
+
+.event-date {
+    background: #00d966;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.event-date-day {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.event-date-month {
+    font-size: 0.85rem;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.event-info h3 {
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.event-info p {
+    color: #aaa;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.event-venue {
+    color: #00d966;
+    font-weight: 600;
+}
+
+.event-time {
+    color: #00d966;
+    font-weight: 600;
+}
+
+/* COMENTÁRIOS */
+#comentarios {
+    background: #0a0a0a;
+}
+
+.comentarios-box {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.comentarios-box input,
+.comentarios-box textarea {
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #222;
+    background: #111;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.comentarios-box textarea {
+    resize: none;
+    height: 120px;
+}
+
+#lista-comentarios {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.comentario {
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #00d966;
+}
+
+.comentario strong {
+    color: #00d966;
+}
+
+.comentario p {
+    margin-top: 0.5rem;
+    color: #ccc;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 2px solid #00d966;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.footer-social a {
+    color: #00d966;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #00ff88;
+    transform: scale(1.2);
+}
+
+/* BOTÃO TEMA */
+.tema-botao {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, #00d966, #00ff88);
+    color: #000;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 1000;
+}
+
+.tema-botao:hover {
+    transform: scale(1.2);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    .event-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .event-date {
+        display: flex;
+        gap: 1rem;
+    }
+
+    #bandas .band-card {
+        flex-direction: column;
+    }
+
+    #bandas .band-image {
+        width: 100%;
+        height: 180px;
+    }
+
+    .music-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
